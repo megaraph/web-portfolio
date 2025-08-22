@@ -1,16 +1,15 @@
-import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import ProjectDetail from "./pages/ProjectDetail";
-import NotFound from "./pages/NotFound";
+import Hero from "./sections/Hero";
+// import About from "./sections/About";
+// import Projects from "./sections/Projects";
+// import Contact from "./sections/Contact";
 
 function App() {
     return (
-        <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white transition-colors duration-300">
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/project/:id" element={<ProjectDetail />} />
-                <Route path="*" element={<NotFound />} />
-            </Routes>
+        <div className="min-h-screen">
+            <Hero />
+            {/* <About />
+            <Projects />
+            <Contact /> */}
         </div>
     );
 }
