@@ -1,9 +1,18 @@
-export default function App() {
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import ProjectDetail from "./pages/ProjectDetail";
+import NotFound from "./pages/NotFound";
+
+function App() {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-            <h1 className="text-5xl font-bold text-white shadow-lg">
-                🎉 Tailwind is Working!
-            </h1>
+        <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white transition-colors duration-300">
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/project/:id" element={<ProjectDetail />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
         </div>
     );
 }
+
+export default App;

@@ -4,6 +4,7 @@ export default {
         "./index.html", // include root HTML
         "./src/**/*.{js,ts,jsx,tsx}", // include all React source files
     ],
+    darkMode: "class",
     theme: {
         extend: {},
     },
