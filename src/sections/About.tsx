@@ -1,4 +1,5 @@
 import portrait from "../assets/img/portrait.jpg";
+import Reveal from "../components/Effects/Reveal";
 
 export default function About() {
     return (
@@ -14,46 +15,52 @@ export default function About() {
                     {/* Left Content Column */}
                     <div className="order-2 lg:order-1 space-y-8">
                         {/* Name with subtle accent */}
-                        <div className="space-y-3">
-                            <div className="w-12 h-[2px] bg-gradient-to-r from-orange-500 to-amber-400"></div>
-                            <h2 className="text-5xl lg:text-6xl font-light tracking-tight text-gray-900 dark:text-white">
-                                Raphael C.{" "}
-                                <span className="font-medium bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
-                                    Murillo
-                                </span>
-                            </h2>
-                        </div>
+                        <Reveal>
+                            <div className="space-y-3">
+                                <div className="w-12 h-[2px] bg-gradient-to-r from-orange-500 to-amber-400"></div>
+                                <h2 className="text-5xl lg:text-6xl font-light tracking-tight text-gray-900 dark:text-white">
+                                    Raphael C.{" "}
+                                    <span className="font-medium bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+                                        Murillo
+                                    </span>
+                                </h2>
+                            </div>
+                        </Reveal>
 
                         {/* Credentials */}
-                        <div className="space-y-4">
-                            <div className="flex items-center gap-3">
-                                <div className="w-2 h-2 rounded-full bg-orange-500"></div>
-                                <p className="text-xl font-light text-gray-700 dark:text-gray-300 tracking-wide">
-                                    Mechanical Engineering
-                                </p>
+                        <Reveal>
+                            <div className="space-y-4">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-orange-500"></div>
+                                    <p className="text-xl font-light text-gray-700 dark:text-gray-300 tracking-wide">
+                                        Mechanical Engineering
+                                    </p>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-orange-400"></div>
+                                    <p className="text-xl font-light text-gray-700 dark:text-gray-300 tracking-wide">
+                                        De La Salle University, Manila
+                                    </p>
+                                </div>
                             </div>
-                            <div className="flex items-center gap-3">
-                                <div className="w-2 h-2 rounded-full bg-orange-400"></div>
-                                <p className="text-xl font-light text-gray-700 dark:text-gray-300 tracking-wide">
-                                    De La Salle University, Manila
-                                </p>
-                            </div>
-                        </div>
+                        </Reveal>
 
                         {/* Description */}
-                        <div className="max-w-lg">
-                            <p className="text-xl leading-relaxed text-gray-600 dark:text-gray-400 font-light">
-                                Engineering student passionate about{" "}
-                                <span className="text-gray-800 dark:text-gray-200 font-normal">
-                                    blending creativity
-                                </span>{" "}
-                                with problem-solving to craft projects where{" "}
-                                <span className="text-gray-800 dark:text-gray-200 font-normal">
-                                    function meets art
-                                </span>
-                                .
-                            </p>
-                        </div>
+                        <Reveal>
+                            <div className="max-w-lg">
+                                <p className="text-xl leading-relaxed text-gray-600 dark:text-gray-400 font-light">
+                                    Engineering student passionate about{" "}
+                                    <span className="text-gray-800 dark:text-gray-200 font-normal">
+                                        blending creativity
+                                    </span>{" "}
+                                    with problem-solving to craft projects where{" "}
+                                    <span className="text-gray-800 dark:text-gray-200 font-normal">
+                                        function meets art
+                                    </span>
+                                    .
+                                </p>
+                            </div>
+                        </Reveal>
 
                         {/* Optional: Call to action or contact info */}
                         <div className="pt-4">
