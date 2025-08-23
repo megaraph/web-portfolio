@@ -111,7 +111,7 @@ export default function Contact() {
                     {/* Left Side - Contact Information */}
                     <div className="space-y-8">
                         <div className="space-y-6">
-                            {contactLinks.map((contact, index) => (
+                            {contactLinks.map((contact) => (
                                 <a
                                     key={contact.name}
                                     href={contact.href}
