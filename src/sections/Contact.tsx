@@ -215,11 +215,10 @@ export default function Contact() {
                                             </svg>
                                         </div>
                                         <blockquote className="text-xl font-light text-gray-700 dark:text-gray-300 italic leading-relaxed">
-                                            "Innovation distinguishes between a
-                                            leader and a follower."
+                                            Hope to hear from you soon!
                                         </blockquote>
                                         <cite className="text-sm text-gray-500 dark:text-gray-400 not-italic">
-                                            — Steve Jobs
+                                            — raph
                                         </cite>
                                     </div>
                                 </div>
