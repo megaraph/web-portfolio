@@ -3,6 +3,13 @@ import { useEffect, useRef, useCallback, useMemo } from "react";
 import Lenis from "@studio-freight/lenis";
 import type { LenisOptions, LenisScrollData } from "@studio-freight/lenis";
 
+// Extend Window interface to include lenis
+declare global {
+    interface Window {
+        lenis?: Lenis | null;
+    }
+}
+
 interface UseLenisOptions extends LenisOptions {
     onScroll?: (data: LenisScrollData) => void;
 }
@@ -42,6 +49,9 @@ export const useLenis = (options?: UseLenisOptions) => {
         // Initialize Lenis
         lenisRef.current = new Lenis(lenisOptions);
 
+        // Make Lenis instance globally available
+        window.lenis = lenisRef.current;
+
         // Add scroll event listener if provided
         if (onScroll) {
             lenisRef.current.on("scroll", onScroll);
@@ -62,6 +72,7 @@ export const useLenis = (options?: UseLenisOptions) => {
             }
             lenisRef.current?.destroy();
             lenisRef.current = null;
+            window.lenis = null;
 
             if (rafRef.current) {
                 cancelAnimationFrame(rafRef.current);
@@ -169,6 +180,9 @@ export const useLenisWithMethods = (options?: UseLenisOptions) => {
     useEffect(() => {
         lenisRef.current = new Lenis(lenisOptions);
 
+        // Make Lenis instance globally available
+        window.lenis = lenisRef.current;
+
         if (onScroll) {
             lenisRef.current.on("scroll", onScroll);
         }
@@ -186,6 +200,7 @@ export const useLenisWithMethods = (options?: UseLenisOptions) => {
             }
             lenisRef.current?.destroy();
             lenisRef.current = null;
+            window.lenis = null;
 
             if (rafRef.current) {
                 cancelAnimationFrame(rafRef.current);
