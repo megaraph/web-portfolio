@@ -1,7 +1,7 @@
 import {
     getFeaturedProject,
     getOtherProjects,
-} from "../components/common/projectsData";
+} from "../components/types/projectsData";
 import Reveal from "../components/Effects/Reveal";
 
 export default function Projects() {
