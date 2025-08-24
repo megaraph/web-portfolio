@@ -121,8 +121,8 @@ export default function Footer() {
                         </div>
 
                         <p className="text-gray-300 leading-relaxed mb-6 max-w-sm">
-                            Mechanical Engineer crafting innovative solutions
-                            where engineering precision meets creative design.
+                            Crafting innovative solutions where engineering
+                            precision meets creative design.
                         </p>
 
                         <div className="text-sm text-gray-400 mb-6">
@@ -146,7 +146,7 @@ export default function Footer() {
                                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                     />
                                 </svg>
-                                <span>Cebu City, Philippines</span>
+                                <span>Manila City, Philippines</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <svg
