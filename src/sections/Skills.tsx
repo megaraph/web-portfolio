@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Reveal from "../components/Utils/Reveal";
+import { useLenis } from "../context/useLenis";
+import { scrollToSection, easingFunctions } from "../utils/scrollUtils";
 
 interface Skill {
     name: string;
@@ -10,6 +12,16 @@ interface Skill {
 
 export default function Skills() {
     const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+    const lenis = useLenis();
+
+    const handleLetsBuild = (e: React.MouseEvent) => {
+        e.preventDefault();
+        scrollToSection("#contact", lenis, {
+            duration: 2,
+            easing: easingFunctions.luxury,
+            offset: -20,
+        });
+    };
 
     const skills: Skill[] = [
         // CAD & Design
@@ -330,8 +342,8 @@ export default function Skills() {
 
                 {/* Contact CTA */}
                 <div className="text-center mt-20">
-                    <a
-                        href="#contact"
+                    <button
+                        onClick={handleLetsBuild}
                         className="inline-flex items-center gap-3 px-8 py-4 border-2 border-orange-500/30 text-gray-800 dark:text-gray-200 rounded-full hover:border-orange-500 hover:bg-orange-500/5 dark:hover:bg-orange-500/10 transition-all duration-300 font-medium tracking-wide backdrop-blur-sm group"
                     >
                         <span>Let's Build Something Extraordinary</span>
@@ -348,7 +360,7 @@ export default function Skills() {
                                 d="M13 7l5 5m0 0l-5 5m5-5H6"
                             />
                         </svg>
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>

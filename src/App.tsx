@@ -1,3 +1,4 @@
+import { useLenis } from "./context/useLenis";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Projects from "./sections/Projects";
@@ -6,6 +7,15 @@ import VideoShowcase from "./sections/VideoShowcase";
 import Skills from "./sections/Skills";
 
 function App() {
+    // Initialize Lenis smooth scrolling for the entire app
+    useLenis({
+        // Custom scroll handler (optional)
+        onScroll: () => {
+            // You can add global scroll-based animations here
+            // console.log('Scroll progress:', data.progress);
+        },
+    });
+
     return (
         <div className="min-h-screen">
             <Hero />

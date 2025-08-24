@@ -2,13 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Remove default scroll behavior since Lenis will handle it */
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 2rem; /* Adds padding when scrolling to anchors */
+    /* scroll-behavior: smooth; */ /* Remove this - Lenis handles it now */
+    scroll-padding-top: 2rem; /* Keeps padding when scrolling to anchors */
 }
 
 body {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */ /* Remove this too */
+}
+
+/* Optional: Hide scrollbar for cleaner luxury look */
+html {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
 }
 
 /* Enhanced gradient animation for consistent luxury feel */
@@ -65,16 +76,16 @@ p {
     line-height: 1.6;
 }
 
-/* Custom scrollbar for webkit browsers */
-::-webkit-scrollbar {
+/* Custom scrollbar for areas where you want to show it */
+.custom-scrollbar::-webkit-scrollbar {
     width: 8px;
 }
 
-::-webkit-scrollbar-track {
+.custom-scrollbar::-webkit-scrollbar-track {
     @apply bg-gray-100 dark:bg-gray-900;
 }
 
-::-webkit-scrollbar-thumb {
+.custom-scrollbar::-webkit-scrollbar-thumb {
     @apply bg-orange-400 hover:bg-orange-500 rounded-full;
 }
 
@@ -93,46 +104,18 @@ p {
     transform: scale(1.1);
 }
 
-/* Add these keyframe animations to your existing global CSS file */
-
-/* Floating particle animations */
-@keyframes floatUpDown {
-    0%,
-    100% {
-        transform: translateY(0px) translateX(0px);
-    }
-    25% {
-        transform: translateY(-20px) translateX(5px);
-    }
-    50% {
-        transform: translateY(0px) translateX(-5px);
-    }
-    75% {
-        transform: translateY(10px) translateX(3px);
-    }
+/* CSS Custom Properties for scroll-driven animations */
+:root {
+    --scroll-progress: 0;
+    --scroll-velocity: 0;
+    --scroll-position: 0;
 }
 
-@keyframes floatSlow {
-    0%,
-    100% {
-        transform: translateY(0px) translateX(0px);
-    }
-    33% {
-        transform: translateY(-30px) translateX(20px);
-    }
-    66% {
-        transform: translateY(15px) translateX(-15px);
-    }
+/* Optional: Scroll-driven animations using CSS custom properties */
+.scroll-driven {
+    transform: translateY(calc(var(--scroll-progress) * 100px));
 }
 
-@keyframes twinkle {
-    0%,
-    100% {
-        opacity: 0.2;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.5);
-    }
+.velocity-opacity {
+    opacity: calc(1 - (var(--scroll-velocity) * 0.1));
 }

@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useLenis } from "../context/useLenis";
+import { scrollToSection, easingFunctions } from "../utils/scrollUtils";
 
 interface Particle {
     id: number;
@@ -13,6 +15,7 @@ interface Particle {
 
 export default function Hero() {
     const [particles, setParticles] = useState<Particle[]>([]);
+    const lenis = useLenis();
 
     useEffect(() => {
         const generateParticles = () => {
@@ -41,6 +44,24 @@ export default function Hero() {
 
         generateParticles();
     }, []);
+
+    const handleExploreProjects = (e: React.MouseEvent) => {
+        e.preventDefault();
+        scrollToSection("#projects", lenis, {
+            duration: 2.5,
+            easing: easingFunctions.luxury,
+            offset: -20, // Small offset for better visual positioning
+        });
+    };
+
+    const handleLetsConnect = (e: React.MouseEvent) => {
+        e.preventDefault();
+        scrollToSection("#contact", lenis, {
+            duration: 2,
+            easing: easingFunctions.luxury,
+            offset: -20,
+        });
+    };
 
     return (
         <section className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center bg-gradient-to-br from-gray-50 to-white dark:from-gray-950 dark:to-black overflow-hidden">
@@ -217,9 +238,9 @@ export default function Hero() {
                         animationFillMode: "forwards",
                     }}
                 >
-                    <a
-                        href="#projects"
-                        className="group relative px-8 py-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-full shadow-lg hover:shadow-xl hover:shadow-orange-500/25 transform hover:scale-105 hover:-translate-y-1 transition-all duration-500 font-medium tracking-wide overflow-hidden"
+                    <button
+                        onClick={handleExploreProjects}
+                        className="group relative px-8 py-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-full shadow-lg hover:shadow-xl hover:shadow-orange-500/25 transform hover:scale-105 hover:-translate-y-1 transition-all duration-500 font-medium tracking-wide overflow-hidden cursor-pointer"
                     >
                         {/* Subtle button glow */}
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
@@ -241,11 +262,11 @@ export default function Hero() {
                                 </svg>
                             </div>
                         </span>
-                    </a>
+                    </button>
 
-                    <a
-                        href="#contact"
-                        className="group relative px-8 py-4 border-2 border-orange-500/30 text-gray-800 dark:text-gray-200 rounded-full hover:border-orange-500 hover:bg-orange-500/5 dark:hover:bg-orange-500/10 hover:shadow-xl hover:shadow-orange-500/10 transform hover:scale-105 hover:-translate-y-1 transition-all duration-500 font-medium tracking-wide backdrop-blur-sm"
+                    <button
+                        onClick={handleLetsConnect}
+                        className="group relative px-8 py-4 border-2 border-orange-500/30 text-gray-800 dark:text-gray-200 rounded-full hover:border-orange-500 hover:bg-orange-500/5 dark:hover:bg-orange-500/10 hover:shadow-xl hover:shadow-orange-500/10 transform hover:scale-105 hover:-translate-y-1 transition-all duration-500 font-medium tracking-wide backdrop-blur-sm cursor-pointer"
                     >
                         <span className="relative flex items-center gap-2">
                             Let's Connect
@@ -267,7 +288,7 @@ export default function Hero() {
                         </span>
                         {/* Hover glow effect */}
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/5 to-orange-500/0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    </a>
+                    </button>
                 </div>
             </div>
 
