@@ -2,7 +2,7 @@ import {
     getFeaturedProject,
     getOtherProjects,
 } from "../components/types/projectsData";
-import Reveal from "../components/Effects/Reveal";
+import Reveal from "../components/Utils/Reveal";
 
 export default function Projects() {
     const featuredProject = getFeaturedProject();

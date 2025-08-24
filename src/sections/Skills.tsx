@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Reveal from "../components/Effects/Reveal";
+import Reveal from "../components/Utils/Reveal";
 
 interface Skill {
     name: string;

@@ -1,5 +1,5 @@
 import portrait from "../assets/img/portrait.jpg";
-import Reveal from "../components/Effects/Reveal";
+import Reveal from "../components/Utils/Reveal";
 
 interface Interest {
     name: string;
