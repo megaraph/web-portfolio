@@ -1,4 +1,47 @@
+import { useEffect, useState } from "react";
+
+interface Particle {
+    id: number;
+    x: number;
+    y: number;
+    size: number;
+    opacity: number;
+    duration: number;
+    delay: number;
+    color: string;
+}
+
 export default function Hero() {
+    const [particles, setParticles] = useState<Particle[]>([]);
+
+    useEffect(() => {
+        const generateParticles = () => {
+            const newParticles: Particle[] = [];
+            const colors = [
+                "bg-orange-400",
+                "bg-amber-400",
+                "bg-orange-300",
+                "bg-amber-300",
+            ];
+
+            for (let i = 0; i < 30; i++) {
+                newParticles.push({
+                    id: i,
+                    x: Math.random() * 100,
+                    y: Math.random() * 100,
+                    size: Math.random() * 4 + 1,
+                    opacity: Math.random() * 0.6 + 0.2,
+                    duration: Math.random() * 20 + 10,
+                    delay: Math.random() * 5,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                });
+            }
+            setParticles(newParticles);
+        };
+
+        generateParticles();
+    }, []);
+
     return (
         <section className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center bg-gradient-to-br from-gray-50 to-white dark:from-gray-950 dark:to-black overflow-hidden">
             {/* Animated Background Aura - Orange/Amber theme to match About section */}
@@ -11,23 +54,109 @@ export default function Hero() {
                 style={{ animationDelay: "2s" }}
             ></div>
 
-            {/* Subtle floating particles */}
-            <div
-                className="absolute top-1/3 left-1/5 w-1 h-1 bg-orange-500 rounded-full opacity-40 animate-ping"
-                style={{ animationDelay: "1s" }}
-            ></div>
-            <div
-                className="absolute top-2/3 right-1/4 w-1 h-1 bg-amber-500 rounded-full opacity-30 animate-pulse"
-                style={{ animationDelay: "3s" }}
-            ></div>
-            <div
-                className="absolute bottom-1/3 left-1/3 w-2 h-2 border border-orange-400/20 rounded-full opacity-50 animate-bounce"
-                style={{ animationDelay: "2.5s" }}
-            ></div>
-            <div
-                className="absolute top-1/2 right-1/6 w-1 h-1 bg-orange-400 rounded-full opacity-60 animate-pulse"
-                style={{ animationDelay: "4s" }}
-            ></div>
+            {/* Enhanced Floating Particles System */}
+            <div className="absolute inset-0 overflow-hidden">
+                {particles.map((particle) => (
+                    <div
+                        key={particle.id}
+                        className={`absolute rounded-full ${particle.color}`}
+                        style={{
+                            left: `${particle.x}%`,
+                            top: `${particle.y}%`,
+                            width: `${particle.size}px`,
+                            height: `${particle.size}px`,
+                            opacity: particle.opacity,
+                            animation: `floatUpDown ${particle.duration}s ease-in-out infinite`,
+                            animationDelay: `${particle.delay}s`,
+                        }}
+                    />
+                ))}
+            </div>
+
+            {/* Glowing Orbs - Larger floating elements */}
+            <div className="absolute inset-0">
+                <div
+                    className="absolute top-20 left-10 w-8 h-8 bg-orange-400/20 rounded-full blur-sm"
+                    style={{
+                        animation: "floatSlow 15s ease-in-out infinite",
+                        animationDelay: "0s",
+                    }}
+                />
+                <div
+                    className="absolute top-32 right-16 w-6 h-6 bg-amber-400/25 rounded-full blur-sm"
+                    style={{
+                        animation: "floatSlow 12s ease-in-out infinite reverse",
+                        animationDelay: "2s",
+                    }}
+                />
+                <div
+                    className="absolute bottom-40 left-20 w-10 h-10 bg-orange-300/15 rounded-full blur-md"
+                    style={{
+                        animation: "floatSlow 18s ease-in-out infinite",
+                        animationDelay: "4s",
+                    }}
+                />
+                <div
+                    className="absolute bottom-20 right-32 w-7 h-7 bg-amber-300/20 rounded-full blur-sm"
+                    style={{
+                        animation: "floatSlow 14s ease-in-out infinite reverse",
+                        animationDelay: "1s",
+                    }}
+                />
+                <div
+                    className="absolute top-1/2 left-8 w-5 h-5 bg-orange-400/30 rounded-full blur-sm"
+                    style={{
+                        animation: "floatSlow 16s ease-in-out infinite",
+                        animationDelay: "3s",
+                    }}
+                />
+                <div
+                    className="absolute top-1/3 right-12 w-9 h-9 bg-amber-400/18 rounded-full blur-md"
+                    style={{
+                        animation: "floatSlow 20s ease-in-out infinite reverse",
+                        animationDelay: "5s",
+                    }}
+                />
+            </div>
+
+            {/* Sparkle Effects - Tiny twinkling particles */}
+            <div className="absolute inset-0">
+                <div
+                    className="absolute top-1/4 left-1/3 w-1 h-1 bg-orange-500 rounded-full"
+                    style={{
+                        animation: "twinkle 3s ease-in-out infinite",
+                        animationDelay: "1s",
+                    }}
+                />
+                <div
+                    className="absolute top-3/4 right-1/4 w-1 h-1 bg-amber-500 rounded-full"
+                    style={{
+                        animation: "twinkle 2.5s ease-in-out infinite",
+                        animationDelay: "0.5s",
+                    }}
+                />
+                <div
+                    className="absolute top-1/2 left-1/6 w-1 h-1 bg-orange-400 rounded-full"
+                    style={{
+                        animation: "twinkle 4s ease-in-out infinite",
+                        animationDelay: "2s",
+                    }}
+                />
+                <div
+                    className="absolute bottom-1/3 right-1/3 w-1 h-1 bg-amber-400 rounded-full"
+                    style={{
+                        animation: "twinkle 3.5s ease-in-out infinite",
+                        animationDelay: "1.5s",
+                    }}
+                />
+                <div
+                    className="absolute top-1/6 right-1/6 w-1 h-1 bg-orange-500 rounded-full"
+                    style={{
+                        animation: "twinkle 2.8s ease-in-out infinite",
+                        animationDelay: "0.8s",
+                    }}
+                />
+            </div>
 
             {/* Very subtle gradient aura around content */}
             <div className="absolute inset-0 bg-gradient-radial from-orange-500/5 via-transparent to-transparent"></div>

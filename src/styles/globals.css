@@ -92,3 +92,47 @@ p {
 .group:hover .group-hover\:scale-110 {
     transform: scale(1.1);
 }
+
+/* Add these keyframe animations to your existing global CSS file */
+
+/* Floating particle animations */
+@keyframes floatUpDown {
+    0%,
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    25% {
+        transform: translateY(-20px) translateX(5px);
+    }
+    50% {
+        transform: translateY(0px) translateX(-5px);
+    }
+    75% {
+        transform: translateY(10px) translateX(3px);
+    }
+}
+
+@keyframes floatSlow {
+    0%,
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    33% {
+        transform: translateY(-30px) translateX(20px);
+    }
+    66% {
+        transform: translateY(15px) translateX(-15px);
+    }
+}
+
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
