@@ -8,14 +8,6 @@ interface Skill {
     category: string;
 }
 
-interface Interest {
-    name: string;
-    description: string;
-    icon: string;
-    specialties: string[];
-    gradient: string;
-}
-
 export default function Skills() {
     const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
@@ -111,47 +103,6 @@ export default function Skills() {
             description: "High-precision material processing",
             icon: "✨",
             category: "manufacturing",
-        },
-    ];
-
-    const interests: Interest[] = [
-        {
-            name: "Aerospace",
-            description:
-                "Pushing the boundaries of flight and space exploration",
-            icon: "🚀",
-            specialties: [
-                "Propulsion Systems",
-                "Aerodynamics",
-                "Systems Design",
-            ],
-            gradient: "from-blue-500 to-indigo-600",
-        },
-        {
-            name: "Biomedical",
-            description:
-                "Engineering solutions for healthcare and human enhancement",
-            icon: "🫀",
-            specialties: ["Medical Devices", "Biomechanics", "Prosthetics"],
-            gradient: "from-red-500 to-pink-600",
-        },
-        {
-            name: "Manufacturing",
-            description: "Innovating production processes and automation",
-            icon: "🏭",
-            specialties: [
-                "Automation",
-                "Process Optimization",
-                "Quality Control",
-            ],
-            gradient: "from-orange-500 to-amber-600",
-        },
-        {
-            name: "Marine",
-            description: "Exploring ocean engineering and naval technologies",
-            icon: "⚓",
-            specialties: ["Robotics", "Hydrodynamics", "Oceanography"],
-            gradient: "from-cyan-500 to-blue-600",
         },
     ];
 
@@ -373,64 +324,6 @@ export default function Skills() {
                                     </div>
                                 )
                             )}
-                        </div>
-                    </div>
-                </Reveal>
-
-                {/* Interest Areas */}
-                <Reveal>
-                    <div>
-                        <div className="flex items-center gap-3 mb-12">
-                            <div className="w-8 h-[1px] bg-gray-400 dark:bg-gray-600"></div>
-                            <span className="text-xs uppercase tracking-[0.2em] text-gray-600 dark:text-gray-400 font-medium">
-                                Areas of Interest
-                            </span>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-                            {interests.map((interest) => (
-                                <div
-                                    key={interest.name}
-                                    className="group relative overflow-hidden bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.1)] dark:shadow-[0_8px_40px_-12px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_60px_-12px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_20px_60px_-12px_rgba(0,0,0,0.4)] transition-all duration-500 border border-gray-100 dark:border-gray-800 hover:-translate-y-2"
-                                >
-                                    {/* Background Gradient */}
-                                    <div
-                                        className={`absolute inset-0 bg-gradient-to-br ${interest.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
-                                    ></div>
-
-                                    <div className="relative z-10">
-                                        <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                                            {interest.icon}
-                                        </div>
-                                        <h4 className="text-xl font-light text-gray-900 dark:text-white mb-3 group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors duration-300">
-                                            {interest.name}
-                                        </h4>
-                                        <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                                            {interest.description}
-                                        </p>
-
-                                        {/* Specialties */}
-                                        <div className="space-y-2">
-                                            {interest.specialties.map(
-                                                (specialty) => (
-                                                    <div
-                                                        key={specialty}
-                                                        className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-500"
-                                                    >
-                                                        <div className="w-1 h-1 bg-orange-400 rounded-full"></div>
-                                                        <span>{specialty}</span>
-                                                    </div>
-                                                )
-                                            )}
-                                        </div>
-
-                                        {/* Accent line */}
-                                        <div
-                                            className={`w-12 h-[2px] bg-gradient-to-r ${interest.gradient} rounded-full mt-6 opacity-0 group-hover:opacity-100 group-hover:w-full transition-all duration-500`}
-                                        ></div>
-                                    </div>
-                                </div>
-                            ))}
                         </div>
                     </div>
                 </Reveal>
