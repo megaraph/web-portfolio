@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useLenis } from "../../context/useLenis";
-import { scrollToTop, easingFunctions } from "../../utils/scrollUtils";
+import {
+    scrollToTop,
+    scrollToSection,
+    easingFunctions,
+} from "../../utils/scrollUtils";
 
 export default function Footer() {
     const [hoveredSocial, setHoveredSocial] = useState<string | null>(null);
@@ -90,14 +94,20 @@ export default function Footer() {
 
     const handleQuickLink = (href: string) => (e: React.MouseEvent) => {
         e.preventDefault();
-        const target = document.querySelector(href);
-        if (target && lenis) {
-            lenis.scrollTo(target as HTMLElement, {
-                duration: 2,
-                easing: easingFunctions.luxury,
-                offset: -20,
-            });
-        }
+        scrollToSection(href, lenis, {
+            duration: 2,
+            easing: easingFunctions.luxury,
+            offset: -20,
+        });
+    };
+
+    const handleStartConversation = (e: React.MouseEvent) => {
+        e.preventDefault();
+        scrollToSection("#contact", lenis, {
+            duration: 2.5,
+            easing: easingFunctions.luxury,
+            offset: -20,
+        });
     };
 
     return (
@@ -177,7 +187,7 @@ export default function Footer() {
                                 <button
                                     key={link.name}
                                     onClick={handleQuickLink(link.href)}
-                                    className="block text-gray-400 hover:text-orange-400 transition-colors duration-300 text-left"
+                                    className="block text-gray-400 hover:text-orange-400 transition-colors duration-300 text-left cursor-pointer"
                                 >
                                     {link.name}
                                 </button>
@@ -188,7 +198,7 @@ export default function Footer() {
                         <div className="mt-8">
                             <button
                                 onClick={handleScrollToTop}
-                                className="group flex items-center gap-2 text-gray-400 hover:text-orange-400 transition-all duration-300"
+                                className="group flex items-center gap-2 text-gray-400 hover:text-orange-400 transition-all duration-300 cursor-pointer"
                             >
                                 <svg
                                     className="w-4 h-4 group-hover:-translate-y-1 transition-transform"
@@ -271,10 +281,9 @@ export default function Footer() {
                         </div>
 
                         {/* CTA */}
-                        <a
-                            href="#contact"
-                            onClick={handleQuickLink("#contact")}
-                            className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 font-medium transition-colors duration-300 group"
+                        <button
+                            onClick={handleStartConversation}
+                            className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 font-medium transition-colors duration-300 group cursor-pointer"
                         >
                             <span>Start a Conversation</span>
                             <svg
@@ -290,7 +299,7 @@ export default function Footer() {
                                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                                 />
                             </svg>
-                        </a>
+                        </button>
                     </div>
                 </div>
 

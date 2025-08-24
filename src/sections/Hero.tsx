@@ -204,14 +204,14 @@ export default function Hero() {
                     }}
                 >
                     <span className="text-gray-900 dark:text-white">
-                        Creative
+                        Impactful
                     </span>{" "}
                     <span className="font-medium bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 bg-clip-text text-transparent">
                         Engineering
                     </span>
                     <br />
                     <span className="text-gray-700 dark:text-gray-300">
-                        Meets Design
+                        Meets Innovation
                     </span>
                 </h1>
 
@@ -223,11 +223,12 @@ export default function Hero() {
                         animationFillMode: "forwards",
                     }}
                 >
-                    Crafting projects where{" "}
+                    Deriving happiness from{" "}
                     <span className="text-gray-800 dark:text-gray-200 font-normal">
-                        function meets art
+                        improving the human experience
                     </span>
-                    , blending engineering precision with creative storytelling.
+                    , by blending engineering precision with creative
+                    storytelling.
                 </p>
 
                 {/* Enhanced Call to Action Buttons */}

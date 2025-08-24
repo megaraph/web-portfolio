@@ -73,7 +73,7 @@ export default function Skills() {
         {
             name: "C/C++",
             description: "Embedded systems and high-performance computing",
-            icon: "⚙️",
+            icon: "⚡",
             category: "programming",
         },
 

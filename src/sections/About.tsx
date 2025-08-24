@@ -35,11 +35,7 @@ export default function About() {
             name: "Manufacturing",
             description: "Innovating production processes and automation",
             icon: "🏭",
-            specialties: [
-                "Automation",
-                "Process Optimization",
-                "Quality Control",
-            ],
+            specialties: ["Automation", "3D Printing", "CNC Machining"],
             gradient: "from-orange-500 to-amber-600",
         },
         {
@@ -105,7 +101,7 @@ export default function About() {
                                     </span>{" "}
                                     with problem-solving to craft projects where{" "}
                                     <span className="text-gray-800 dark:text-gray-200 font-normal">
-                                        function meets art
+                                        engineering meets impact
                                     </span>
                                     .
                                 </p>
