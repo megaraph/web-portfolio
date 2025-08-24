@@ -437,7 +437,10 @@ export default function Skills() {
 
                 {/* Contact CTA */}
                 <div className="text-center mt-20">
-                    <div className="inline-flex items-center gap-3 px-8 py-4 border-2 border-orange-500/30 text-gray-800 dark:text-gray-200 rounded-full hover:border-orange-500 hover:bg-orange-500/5 dark:hover:bg-orange-500/10 transition-all duration-300 font-medium tracking-wide backdrop-blur-sm group cursor-pointer">
+                    <a
+                        href="#contact"
+                        className="inline-flex items-center gap-3 px-8 py-4 border-2 border-orange-500/30 text-gray-800 dark:text-gray-200 rounded-full hover:border-orange-500 hover:bg-orange-500/5 dark:hover:bg-orange-500/10 transition-all duration-300 font-medium tracking-wide backdrop-blur-sm group"
+                    >
                         <span>Let's Build Something Extraordinary</span>
                         <svg
                             className="w-4 h-4 group-hover:translate-x-1 transition-transform"
@@ -452,7 +455,7 @@ export default function Skills() {
                                 d="M13 7l5 5m0 0l-5 5m5-5H6"
                             />
                         </svg>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
