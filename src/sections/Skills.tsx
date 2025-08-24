@@ -92,6 +92,26 @@ export default function Skills() {
             icon: "📡",
             category: "electronics",
         },
+
+        // Manufacturing
+        {
+            name: "3D Printing",
+            description: "Additive manufacturing for rapid prototyping",
+            icon: "🖨️",
+            category: "manufacturing",
+        },
+        {
+            name: "CNC Milling",
+            description: "Precision subtractive manufacturing processes",
+            icon: "⚙️",
+            category: "manufacturing",
+        },
+        {
+            name: "Laser Cutting/Engraving",
+            description: "High-precision material processing",
+            icon: "✨",
+            category: "manufacturing",
+        },
     ];
 
     const interests: Interest[] = [
@@ -142,6 +162,7 @@ export default function Skills() {
             color: "blue",
         },
         electronics: { title: "Electronics", color: "green" },
+        manufacturing: { title: "Manufacturing", color: "purple" },
     };
 
     const getSkillsByCategory = (category: string) => {
@@ -153,14 +174,30 @@ export default function Skills() {
         const connections: { [key: string]: string[] } = {
             Python: ["MATLAB", "Arduino", "ESP32"],
             MATLAB: ["Python", "SolidWorks"],
-            Arduino: ["KiCad", "ESP32", "C/C++", "Python"],
+            Arduino: ["KiCad", "ESP32", "C/C++", "Python", "3D Printing"],
             ESP32: ["Arduino", "KiCad", "C/C++"],
             KiCad: ["Arduino", "ESP32"],
-            SolidWorks: ["Fusion 360", "OnShape", "MATLAB"],
-            "Fusion 360": ["SolidWorks", "OnShape"],
-            OnShape: ["SolidWorks", "Fusion 360"],
+            SolidWorks: [
+                "Fusion 360",
+                "OnShape",
+                "MATLAB",
+                "3D Printing",
+                "CNC Milling",
+            ],
+            "Fusion 360": [
+                "SolidWorks",
+                "OnShape",
+                "3D Printing",
+                "CNC Milling",
+                "Laser Cutting/Engraving",
+            ],
+            OnShape: ["SolidWorks", "Fusion 360", "3D Printing"],
             "C/C++": ["Arduino", "ESP32"],
             "JavaScript/React": ["Python"],
+            "3D Printing": ["SolidWorks", "Fusion 360", "OnShape", "Arduino"],
+            "CNC Milling": ["SolidWorks", "Fusion 360", "AutoCAD"],
+            "Laser Cutting/Engraving": ["Fusion 360", "AutoCAD"],
+            AutoCAD: ["SolidWorks", "CNC Milling", "Laser Cutting/Engraving"],
         };
         return connections[currentSkill] || [];
     };
