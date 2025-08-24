@@ -5,6 +5,7 @@ import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import VideoShowcase from "./sections/VideoShowcase";
 import Skills from "./sections/Skills";
+import Footer from "./components/layout/Footer";
 
 function App() {
     // Initialize Lenis smooth scrolling for the entire app
@@ -24,6 +25,7 @@ function App() {
             <Skills />
             <Projects />
             <Contact />
+            <Footer />
         </div>
     );
 }

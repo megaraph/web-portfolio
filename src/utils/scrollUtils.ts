@@ -34,22 +34,46 @@ export const scrollToSection = (
     lenis.scrollTo(target as HTMLElement, { ...defaultOptions, ...options });
 };
 
-// Smooth scroll to top
+// Add this to your scrollUtils.ts if it's not already there
 export const scrollToTop = (
     lenis: Lenis | null,
     options?: ScrollToOptions
 ): void => {
-    if (!lenis) {
-        console.warn("Lenis instance not available");
-        return;
-    }
-
     const defaultOptions: ScrollToOptions = {
         duration: 1.5,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     };
 
-    lenis.scrollTo(0, { ...defaultOptions, ...options });
+    const finalOptions = { ...defaultOptions, ...options };
+
+    // Try to get Lenis instance
+    const lenisInstance = lenis || window.lenis;
+
+    console.log("ScrollToTop - Lenis instance:", lenisInstance);
+
+    if (lenisInstance) {
+        console.log("Using Lenis scroll to top");
+        lenisInstance.scrollTo(0, finalOptions);
+    } else {
+        console.log("Lenis not available, trying retry for scroll to top...");
+
+        // Retry after a short delay
+        setTimeout(() => {
+            const retryLenis = window.lenis;
+            console.log("ScrollToTop Retry - Lenis instance:", retryLenis);
+
+            if (retryLenis) {
+                console.log("ScrollToTop retry successful, using Lenis");
+                retryLenis.scrollTo(0, finalOptions);
+            } else {
+                console.log("ScrollToTop retry failed, using native scroll");
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            }
+        }, 100);
+    }
 };
 
 // Scroll by a specific amount
