@@ -131,8 +131,8 @@ const contactData = {
         },
         {
             name: "Hashnode Blog",
-            value: "raphaelmurillo.hashnode.dev",
-            href: "https://your-blog.hashnode.dev",
+            value: "raphmurillo.hashnode.dev",
+            href: "https://raphmurillo.hashnode.dev/",
             description: "Technical writing",
             primary: false,
             icon: (
