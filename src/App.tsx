@@ -1,4 +1,5 @@
 import { useLenis } from "./context/useLenis";
+import { ThemeProvider } from "./context/ThemeProvider"; // Adjust path as needed
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Projects from "./sections/Projects";
@@ -6,8 +7,9 @@ import Contact from "./sections/Contact";
 import VideoShowcase from "./sections/VideoShowcase";
 import Skills from "./sections/Skills";
 import Footer from "./components/layout/Footer";
+import ThemeToggle from "./components/Utils/ThemeToggle";
 
-function App() {
+function AppContent() {
     // Initialize Lenis smooth scrolling for the entire app
     useLenis({
         // Custom scroll handler (optional)
@@ -18,7 +20,7 @@ function App() {
     });
 
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
             <Hero />
             <VideoShowcase />
             <About />
@@ -26,7 +28,16 @@ function App() {
             <Projects />
             <Contact />
             <Footer />
+            <ThemeToggle />
         </div>
+    );
+}
+
+function App() {
+    return (
+        <ThemeProvider>
+            <AppContent />
+        </ThemeProvider>
     );
 }
 

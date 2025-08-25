@@ -2,19 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Force dark mode globally */
+/* Remove the forced dark mode and let the theme system handle it */
 :root {
+    /* Dark theme is default */
+}
+
+.dark {
     color-scheme: dark;
 }
 
 /* Remove default scroll behavior since Lenis will handle it */
 html {
-    /* scroll-behavior: smooth; */ /* Remove this - Lenis handles it now */
     scroll-padding-top: 2rem; /* Keeps padding when scrolling to anchors */
-}
-
-body {
-    /* scroll-behavior: smooth; */ /* Remove this too */
 }
 
 /* Optional: Hide scrollbar for cleaner luxury look */
@@ -123,4 +122,26 @@ p {
 
 .velocity-opacity {
     opacity: calc(1 - (var(--scroll-velocity) * 0.1));
+}
+
+/* Additional theme-aware styles for better contrast */
+.bg-card {
+    @apply bg-white dark:bg-gray-800;
+}
+
+.text-card {
+    @apply text-gray-900 dark:text-white;
+}
+
+.border-card {
+    @apply border-gray-200 dark:border-gray-700;
+}
+
+/* Enhanced shadows for both themes */
+.shadow-theme {
+    @apply shadow-lg dark:shadow-2xl;
+}
+
+.shadow-theme-sm {
+    @apply shadow-sm dark:shadow-xl;
 }
