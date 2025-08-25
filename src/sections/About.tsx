@@ -83,6 +83,12 @@ export default function About() {
                                     </p>
                                 </div>
                                 <div className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-orange-500"></div>
+                                    <p className="text-xl font-light text-gray-700 dark:text-gray-300 tracking-wide">
+                                        Formerly Biomedical Engineering 🥀
+                                    </p>
+                                </div>
+                                <div className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-orange-400"></div>
                                     <p className="text-xl font-light text-gray-700 dark:text-gray-300 tracking-wide">
                                         De La Salle University, Manila
@@ -97,11 +103,11 @@ export default function About() {
                                 <p className="text-xl leading-relaxed text-gray-600 dark:text-gray-400 font-light">
                                     Engineering student passionate about{" "}
                                     <span className="text-gray-800 dark:text-gray-200 font-normal">
-                                        blending creativity
+                                        transforming difficult challenges
                                     </span>{" "}
-                                    with problem-solving to craft projects where{" "}
+                                    into meaningful solutions—where{" "}
                                     <span className="text-gray-800 dark:text-gray-200 font-normal">
-                                        engineering meets impact
+                                        engineering, design, and creativity meet
                                     </span>
                                     .
                                 </p>
@@ -161,9 +167,8 @@ export default function About() {
                                 </span>
                             </h3>
                             <p className="text-lg font-light text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                                Exploring diverse fields where mechanical
-                                engineering principles drive breakthrough
-                                solutions
+                                Exploring diverse fields where engineering
+                                principles drive breakthrough solutions
                             </p>
                         </div>
 

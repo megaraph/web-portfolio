@@ -184,17 +184,18 @@ export default function Skills() {
                         <div className="w-12 h-[2px] bg-gradient-to-r from-orange-500 to-transparent"></div>
                     </div>
                     <h2 className="text-5xl lg:text-6xl font-light tracking-tight text-gray-900 dark:text-white mb-6">
-                        Engineering{" "}
+                        Raph's Engineering{" "}
                         <span className="font-medium bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
                             Toolkit
                         </span>
                     </h2>
                     <p className="text-xl font-light text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                        Bridging traditional mechanical engineering with modern
-                        digital innovation
+                        These are some skills I have picked up along the way.
+                        Bridging traditional engineering with modern digital
+                        innovation.
                     </p>
                     <div className="mt-4 text-sm text-gray-500 dark:text-gray-500">
-                        De La Salle University • Mechanical Engineering
+                        Engineering • Design • Technology
                     </div>
                 </div>
 
