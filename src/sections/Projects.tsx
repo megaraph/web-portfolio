@@ -237,7 +237,7 @@ export default function Projects() {
                 {/* View All Projects Link */}
                 <div className="text-center mt-20">
                     <a
-                        href="https://your-hashnode-blog.hashnode.dev"
+                        href="https://raphmurillo.hashnode.dev/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-3 px-8 py-4 border-2 border-orange-500/30 text-gray-800 dark:text-gray-200 rounded-full hover:border-orange-500 hover:bg-orange-500/5 dark:hover:bg-orange-500/10 transition-all duration-300 font-medium tracking-wide backdrop-blur-sm group"
