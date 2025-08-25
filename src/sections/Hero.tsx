@@ -225,7 +225,7 @@ export default function Hero() {
                 >
                     Deriving happiness from{" "}
                     <span className="text-gray-800 dark:text-gray-200 font-normal">
-                        improving the human experience
+                        elevating the human experience
                     </span>
                     , by blending engineering precision with creative
                     storytelling.
