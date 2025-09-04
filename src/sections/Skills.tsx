@@ -76,6 +76,19 @@ export default function Skills() {
             icon: "⚡",
             category: "programming",
         },
+        {
+            name: "Docker",
+            description: "Containerization and environment management",
+            icon: "🐳",
+            category: "programming",
+        },
+        {
+            name: "AWS",
+            description:
+                "Mainly used for hosting web applications (lambda, S3, bedrock, dynamoDB)",
+            icon: "☁️",
+            category: "programming",
+        },
 
         // Electronics
         {
