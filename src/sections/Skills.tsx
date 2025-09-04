@@ -148,7 +148,14 @@ export default function Skills() {
     const getRelatedSkills = (currentSkill: string) => {
         // Define skill relationships for subtle connection effects
         const connections: { [key: string]: string[] } = {
-            Python: ["MATLAB", "Arduino", "ESP32"],
+            Python: [
+                "MATLAB",
+                "Arduino",
+                "ESP32",
+                "JavaScript/React",
+                "Docker",
+                "AWS",
+            ],
             MATLAB: ["Python", "SolidWorks"],
             Arduino: ["KiCad", "ESP32", "C/C++", "Python", "3D Printing"],
             ESP32: ["Arduino", "KiCad", "C/C++"],
@@ -159,6 +166,7 @@ export default function Skills() {
                 "MATLAB",
                 "3D Printing",
                 "CNC Milling",
+                "AutoCAD",
             ],
             "Fusion 360": [
                 "SolidWorks",
@@ -169,11 +177,13 @@ export default function Skills() {
             ],
             OnShape: ["SolidWorks", "Fusion 360", "3D Printing"],
             "C/C++": ["Arduino", "ESP32"],
-            "JavaScript/React": ["Python"],
+            "JavaScript/React": ["Python", "Docker", "AWS"],
             "3D Printing": ["SolidWorks", "Fusion 360", "OnShape", "Arduino"],
             "CNC Milling": ["SolidWorks", "Fusion 360", "AutoCAD"],
             "Laser Cutting/Engraving": ["Fusion 360", "AutoCAD"],
-            AutoCAD: ["SolidWorks", "CNC Milling", "Laser Cutting/Engraving"],
+            AutoCAD: ["SolidWorks"],
+            Docker: ["Python", "JavaScript/React", "AWS"],
+            AWS: ["Python", "JavaScript/React", "Docker"],
         };
         return connections[currentSkill] || [];
     };
