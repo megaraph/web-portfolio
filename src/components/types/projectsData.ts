@@ -38,16 +38,16 @@ export const projects: Project[] = [
             "An ESP32-based RFID scanner that reads student IDs and logs attendance data to a Google Sheet via WiFi, streamlining the attendance process for school organizations.",
         image: rfidImg,
         tags: ["Electronics", "Product Design", "Prototyping"],
-        link: "https://your-hashnode-blog.hashnode.dev/cute-desk-robot-esp32-companion", // Your actual Hashnode URL
+        link: "https://raphmurillo.hashnode.dev/school-id-based-attendance-system",
     },
     {
         id: "hip-implant",
-        title: "3D Printed Femoral Hip Ipmlant",
+        title: "3D Printed Femoral Hip Implant",
         description:
             "A detailed 3D printed model of a femoral hip implant created using Fusion360. The design was derived from online images of actual implants and I spun-off a design of my own.",
         image: implantImg,
         tags: ["Fusion360", "3D Modeling", "Biomedical"],
-        link: "https://your-hashnode-blog.hashnode.dev/cute-desk-robot-esp32-companion", // Your actual Hashnode URL
+        link: "https://your-hashnode-blog.hashnode.dev/cute-desk-robot-esp32-companion",
     },
     {
         id: "nail-clippers",
@@ -56,7 +56,7 @@ export const projects: Project[] = [
             "A detailed 3D model of a nail clipper created using Solidworks, showcasing skills in 3D modeling.",
         image: nailImg,
         tags: ["SolidWorks", "3d Modeling", "CAD"],
-        link: "https://drive.google.com/file/d/1Vx4ZhvUFTzReigpi7vFYsx7xYr6sB2Dx/view?usp=sharing", // Your actual Hashnode URL
+        link: "https://drive.google.com/file/d/1Vx4ZhvUFTzReigpi7vFYsx7xYr6sB2Dx/view?usp=sharing",
     },
     {
         id: "nose-cone",
@@ -65,7 +65,7 @@ export const projects: Project[] = [
             "A computational analysis of a Von Kármán ogive rocket nose cone determining its volume and cost of 3D printing using Python and integral calculus.",
         image: noseImg,
         tags: ["Integral Calculus", "Matplotlib", "CAD"],
-        link: "https://drive.google.com/file/d/1mSREjQ9Zs21Lo0JRKQnxBbu1JeltuPDL/view?usp=drive_link", // Your actual Hashnode URL
+        link: "https://drive.google.com/file/d/1mSREjQ9Zs21Lo0JRKQnxBbu1JeltuPDL/view?usp=drive_link",
     },
 ];
 
